@@ -23,8 +23,7 @@ void ScriptExt::ExtData::SaveToStream(PhobosStreamWriter& Stm)
 // container
 
 ScriptExt::ExtContainer::ExtContainer() : Container("ScriptClass")
-{
-}
+{ }
 
 ScriptExt::ExtContainer::~ExtContainer() = default;
 
@@ -215,6 +214,10 @@ void ScriptExt::ProcessAction(TeamClass* pTeam)
 	case PhobosScripts::ChronoshiftToEnemyBase:
 		// Chronoshift to enemy base, argument is additional distance modifier
 		ScriptExt::ChronoshiftToEnemyBase(pTeam, argument);
+		break;
+	case PhobosScripts::RepairDestroyedBridge:
+		// Start Timed Jump that jumps to the same line when the countdown finish (in frames)
+		ScriptExt::RepairDestroyedBridge(pTeam, -1);
 		break;
 	default:
 		// Do nothing because or it is a wrong Action number or it is an Ares/YR action...
@@ -1299,4 +1302,8 @@ void ScriptExt::Log(const char* pFormat, ...)
 	va_start(args, pFormat);
 	Debug::LogWithVArgs(pFormat, args);
 	va_end(args);
+}
+
+void ScriptExt::RepairDestroyedBridge(TeamClass* pTeam, int mode)
+{
 }

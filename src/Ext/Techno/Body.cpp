@@ -123,7 +123,7 @@ double TechnoExt::GetCurrentSpeedMultiplier(FootClass* pThis)
 		(pThis->HasAbility(Ability::Faster) ? RulesClass::Instance->VeteranSpeed : 1.0);
 }
 
-CoordStruct TechnoExt::PassengerKickOutLocation(TechnoClass* pThis, FootClass* pPassenger, int maxAttempts = 1)
+CoordStruct TechnoExt::PassengerKickOutLocation(TechnoClass* pThis, FootClass* pPassenger, int maxAttempts)
 {
 	if (!pThis || !pPassenger)
 		return CoordStruct::Empty;
@@ -404,7 +404,7 @@ bool TechnoExt::ExtData::HasAttachedEffects(std::vector<AttachEffectTypeClass*> 
 
 					if (minSize > 0)
 					{
-						if (cumulativeCount < minCounts->at(typeCounter-1 >= minSize ? minSize - 1 : typeCounter - 1))
+						if (cumulativeCount < minCounts->at(typeCounter - 1 >= minSize ? minSize - 1 : typeCounter - 1))
 							continue;
 					}
 					if (maxSize > 0)
@@ -588,4 +588,3 @@ DEFINE_HOOK(0x70C264, TechnoClass_Save_Suffix, 0x5)
 
 	return 0;
 }
-

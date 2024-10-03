@@ -15,7 +15,7 @@ public:
 		, FreeFallOnTarget { true }
 		, NoLaunch { false }
 		, TurningPointAnim {}
-	{}
+	{ }
 
 	virtual bool Load(PhobosStreamReader& Stm, bool RegisterForChange) override;
 	virtual bool Save(PhobosStreamWriter& Stm) const override;
@@ -42,10 +42,10 @@ class BombardTrajectory final : public PhobosTrajectory
 public:
 	BombardTrajectory(noinit_t) :PhobosTrajectory { noinit_t{} } { }
 
-	BombardTrajectory(PhobosTrajectoryType const* pType) : PhobosTrajectory(TrajectoryFlag::Bombard)
+	BombardTrajectory(BombardTrajectoryType const* trajType) : PhobosTrajectory(TrajectoryFlag::Bombard, trajType->Trajectory_Speed)
 		, IsFalling { false }
 		, RemainingDistance { 1 }
-		, Height { 0.0 }
+		, Height { trajType->Height }
 		, FallPercent { 1.0 }
 		, FallPercentShift { 0.0 }
 		, FallScatterRange { Leptons(0) }
@@ -54,7 +54,7 @@ public:
 		, FreeFallOnTarget { true }
 		, NoLaunch { false }
 		, TurningPointAnim {}
-	{}
+	{ }
 
 	virtual bool Load(PhobosStreamReader& Stm, bool RegisterForChange) override;
 	virtual bool Save(PhobosStreamWriter& Stm) const override;
