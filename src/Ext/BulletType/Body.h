@@ -28,7 +28,8 @@ public:
 		ValueableIdxVector<LaserTrailTypeClass> LaserTrail_Types;
 		Nullable<double> Gravity;
 
-		TrajectoryTypePointer TrajectoryType;
+		PhobosTrajectoryType* TrajectoryType;// TODO: why not unique_ptr
+		Valueable<double> Trajectory_Speed;
 
 		Valueable<bool> Shrapnel_AffectsGround;
 		Valueable<bool> Shrapnel_AffectsBuildings;
@@ -81,7 +82,8 @@ public:
 			, Interceptable_WeaponOverride {}
 			, LaserTrail_Types {}
 			, Gravity {}
-			, TrajectoryType { }
+			, TrajectoryType { nullptr }
+			, Trajectory_Speed { 100.0 }
 			, Shrapnel_AffectsGround { false }
 			, Shrapnel_AffectsBuildings { false }
 			, Shrapnel_UseWeaponTargeting { false }
@@ -137,8 +139,7 @@ public:
 		void TrajectoryValidation() const;
 	};
 
-	class ExtContainer final : public Container<BulletTypeExt>
-	{
+	class ExtContainer final : public Container<BulletTypeExt> {
 	public:
 		ExtContainer();
 		~ExtContainer();

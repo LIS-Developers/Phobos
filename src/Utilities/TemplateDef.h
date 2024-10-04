@@ -1,4 +1,3 @@
-
 #pragma region Ares Copyrights
 /*
  *Copyright (c) 2008+, All Ares Contributors
@@ -60,7 +59,7 @@
 namespace detail
 {
 	template <typename T, bool allocate = false>
-	inline bool read(T& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read(T &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -87,7 +86,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<bool>(bool& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<bool>(bool &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		bool buffer;
 
@@ -105,7 +104,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<int>(int& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<int>(int &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer;
 
@@ -123,7 +122,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<ArmorType>(ArmorType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<ArmorType>(ArmorType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer = value;
 
@@ -144,7 +143,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<unsigned short>(unsigned short& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<unsigned short>(unsigned short &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer;
 
@@ -158,7 +157,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<BYTE>(BYTE& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<BYTE>(BYTE &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer;
 
@@ -183,7 +182,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<float>(float& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<float>(float &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		double buffer;
 
@@ -201,7 +200,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<double>(double& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<double>(double &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		double buffer;
 
@@ -219,16 +218,16 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<Point2D>(Point2D& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<Point2D>(Point2D &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
-		if (parser.Read2Integers(pSection, pKey, (int*)&value))
+		if (parser.Read2Integers(pSection, pKey, (int *)&value))
 			return true;
 
 		return false;
 	}
 
 	template <>
-	inline bool read<Vector2D<double>>(Vector2D<double>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<Vector2D<double>>(Vector2D<double> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.Read2Doubles(pSection, pKey, (double*)&value))
 			return true;
@@ -237,7 +236,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<Vector3D<float>>(Vector3D<float>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<Vector3D<float>>(Vector3D<float> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.Read<float, 3>(pSection, pKey, (float*)&value))
 			return true;
@@ -246,7 +245,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<CoordStruct>(CoordStruct& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<CoordStruct>(CoordStruct &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.Read3Integers(pSection, pKey, (int*)&value))
 			return true;
@@ -255,7 +254,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<ColorStruct>(ColorStruct& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<ColorStruct>(ColorStruct &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		ColorStruct buffer;
 
@@ -273,7 +272,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<PartialVector2D<int>>(PartialVector2D<int>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<PartialVector2D<int>>(PartialVector2D<int> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		value.ValueCount = parser.ReadMultipleIntegers(pSection, pKey, (int*)&value, 2);
 
@@ -284,7 +283,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<PartialVector2D<double>>(PartialVector2D<double>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<PartialVector2D<double>>(PartialVector2D<double> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		value.ValueCount = parser.ReadMultipleDoubles(pSection, pKey, (double*)&value, 2);
 
@@ -295,9 +294,9 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<PartialVector3D<int>>(PartialVector3D<int>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<PartialVector3D<int>>(PartialVector3D<int> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
-		value.ValueCount = parser.ReadMultipleIntegers(pSection, pKey, (int*)&value, 3);
+		value.ValueCount = parser.ReadMultipleIntegers(pSection, pKey, (int *)&value, 3);
 
 		if (value.ValueCount > 0)
 			return true;
@@ -306,7 +305,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<PartialVector3D<double>>(PartialVector3D<double>& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<PartialVector3D<double>>(PartialVector3D<double> &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		value.ValueCount = parser.ReadMultipleDoubles(pSection, pKey, (double*)&value, 3);
 
@@ -317,7 +316,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<CSFText>(CSFText& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<CSFText>(CSFText &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -329,7 +328,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<SHPStruct*>(SHPStruct*& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<SHPStruct *>(SHPStruct *&value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -355,7 +354,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<MouseCursor>(MouseCursor& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<MouseCursor>(MouseCursor &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		auto ret = false;
 
@@ -418,7 +417,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<RocketStruct>(RocketStruct& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<RocketStruct>(RocketStruct &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		auto ret = false;
 
@@ -472,7 +471,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<Leptons>(Leptons& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<Leptons>(Leptons &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		double buffer;
 
@@ -490,7 +489,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<OwnerHouseKind>(OwnerHouseKind& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<OwnerHouseKind>(OwnerHouseKind &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -539,7 +538,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<Mission>(Mission& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<Mission>(Mission &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -560,7 +559,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<DirType>(DirType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<DirType>(DirType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer;
 
@@ -581,7 +580,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<FacingType>(FacingType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<FacingType>(FacingType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		int buffer;
 
@@ -635,7 +634,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<SuperWeaponAITargetingMode>(SuperWeaponAITargetingMode& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<SuperWeaponAITargetingMode>(SuperWeaponAITargetingMode &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -662,7 +661,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<AffectedTarget>(AffectedTarget& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<AffectedTarget>(AffectedTarget &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -719,7 +718,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<AffectedHouse>(AffectedHouse& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<AffectedHouse>(AffectedHouse &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -768,7 +767,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<AttachedAnimFlag>(AttachedAnimFlag& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<AttachedAnimFlag>(AttachedAnimFlag &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -806,7 +805,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<AreaFireTarget>(AreaFireTarget& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<AreaFireTarget>(AreaFireTarget &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -835,7 +834,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<SelfHealGainType>(SelfHealGainType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<SelfHealGainType>(SelfHealGainType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -864,7 +863,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<SlaveChangeOwnerType>(SlaveChangeOwnerType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<SlaveChangeOwnerType>(SlaveChangeOwnerType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -894,7 +893,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<AutoDeathBehavior>(AutoDeathBehavior& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<AutoDeathBehavior>(AutoDeathBehavior &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -920,7 +919,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<TextAlign>(TextAlign& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<TextAlign>(TextAlign &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -959,14 +958,14 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<TranslucencyLevel>(TranslucencyLevel& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<TranslucencyLevel>(TranslucencyLevel &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		return value.Read(parser, pSection, pKey);
 	}
 
 
 	template <>
-	inline bool read<IronCurtainEffect>(IronCurtainEffect& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<IronCurtainEffect>(IronCurtainEffect &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -995,7 +994,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<TargetZoneScanType>(TargetZoneScanType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<TargetZoneScanType>(TargetZoneScanType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1024,7 +1023,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<ChronoSparkleDisplayPosition>(ChronoSparkleDisplayPosition& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<ChronoSparkleDisplayPosition>(ChronoSparkleDisplayPosition &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1046,7 +1045,7 @@ namespace detail
 				{
 					parsed |= ChronoSparkleDisplayPosition::OccupantSlots;
 				}
-				else if (!_strcmpi(cur, "all"))
+				else if (!_strcmpi(cur, "all") )
 				{
 					parsed |= ChronoSparkleDisplayPosition::All;
 				}
@@ -1163,7 +1162,7 @@ namespace detail
 	}
 
 	template <>
-	inline bool read<CLSID>(CLSID& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<CLSID>(CLSID &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (!parser.ReadString(pSection, pKey))
 			return false;
@@ -1191,7 +1190,7 @@ if(_strcmpi(parser.value(), #name) == 0){ value = LocomotionClass::CLSIDs::name;
 #define PARSE_IF_IS_PHOBOS_LOCO(name)\
 if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionClass); return true; }
 
-			// Add your locomotor parsing here
+		// Add your locomotor parsing here
 #ifdef CUSTOM_LOCO_EXAMPLE_ENABLED // Add semantic parsing for loco
 			PARSE_IF_IS_PHOBOS_LOCO(Test);
 #endif
@@ -1218,7 +1217,7 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 	}
 
 	template <>
-	inline bool read<HorizontalPosition>(HorizontalPosition& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<HorizontalPosition>(HorizontalPosition &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1246,7 +1245,7 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 	}
 
 	template <>
-	inline bool read<VerticalPosition>(VerticalPosition& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<VerticalPosition>(VerticalPosition &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1274,7 +1273,7 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 	}
 
 	template <>
-	inline bool read<BuildingSelectBracketPosition>(BuildingSelectBracketPosition& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<BuildingSelectBracketPosition>(BuildingSelectBracketPosition &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1315,7 +1314,7 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 	}
 
 	template <>
-	inline bool read<DisplayInfoType>(DisplayInfoType& value, INI_EX& parser, const char* pSection, const char* pKey)
+	inline bool read<DisplayInfoType>(DisplayInfoType &value, INI_EX &parser, const char *pSection, const char *pKey)
 	{
 		if (parser.ReadString(pSection, pKey))
 		{
@@ -1359,6 +1358,46 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 			else if (_strcmpi(str, "gattlingstage") == 0)
 			{
 				value = DisplayInfoType::GattlingStage;
+			}
+			else if (_strcmpi(str, "rof") == 0)
+			{
+				value = DisplayInfoType::ROF;
+			}
+			else if (_strcmpi(str, "reload") == 0)
+			{
+				value = DisplayInfoType::Reload;
+			}
+			else if (_strcmpi(str, "spawntimer") == 0)
+			{
+				value = DisplayInfoType::SpawnTimer;
+			}
+			else if (_strcmpi(str, "gattlingtimer") == 0)
+			{
+				value = DisplayInfoType::GattlingTimer;
+			}
+			else if (_strcmpi(str, "producecash") == 0)
+			{
+				value = DisplayInfoType::ProduceCash;
+			}
+			else if (_strcmpi(str, "passengerkill") == 0)
+			{
+				value = DisplayInfoType::PassengerKill;
+			}
+			else if (_strcmpi(str, "autodeath") == 0)
+			{
+				value = DisplayInfoType::AutoDeath;
+			}
+			else if (_strcmpi(str, "superweapon") == 0)
+			{
+				value = DisplayInfoType::SuperWeapon;
+			}
+			else if (_strcmpi(str, "ironcurtain") == 0)
+			{
+				value = DisplayInfoType::IronCurtain;
+			}
+			else if (_strcmpi(str, "temporallife") == 0)
+			{
+				value = DisplayInfoType::TemporalLife;
 			}
 			else
 			{
@@ -1408,9 +1447,9 @@ if(_strcmpi(parser.value(), #name) == 0){ value = __uuidof(name ## LocomotionCla
 
 template <typename T>
 template <bool Allocate>
-void __declspec(noinline) Valueable<T>::Read(INI_EX& parser, const char* pSection, const char* pKey)
+void __declspec(noinline) Valueable<T>::Read(INI_EX &parser, const char *pSection, const char *pKey)
 {
-	detail::read<T, Allocate>(this->Value, parser, pSection, pKey);
+	detail::read<T,Allocate>(this->Value, parser, pSection, pKey);
 }
 
 template <typename T>
