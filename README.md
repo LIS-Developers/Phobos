@@ -52,12 +52,13 @@ x=10105,n ;n为整数型，AI工程师选择桥梁维修小屋的模式
 - If it finds a trigger with 5000 current probability weight then discard valid triggers all and start searching all valid triggers with weight 5000. AI will pick 1 randomly and decrease by 1 the current weight of the selected trigger (so if nothing happens in the next teams selection loop it won't appear in this special list). Under this scenario categories are disabled.
 - Units can override the category using `ConsideredVehicle` and `ConsideredNaval` boolean tags.
 - AI is be able to use unlocked units in captured Secret Labs.
+
 - 新的 AI 系统，用于在多人游戏中随机选择有效的触发器。与原始方法不同，此方法检查先决条件并处理其他详细信息。
 - 它可以将有效的触发器分为4个类别：地面、空中、海军和混合类别。如果设置，AI 将在随机类别中选取一个随机触发器。
-- 类别可以具有不同的机会概率。它可以全局设置或按房屋自定义。默认情况下，每个类别都有 25% 的机会被选中。
+- 类别可以具有不同的机会概率。它可以全局设置或按所属方自定义。默认情况下，每个类别都有 25% 的机会被选中。
 - 'NewTeamsSelector.MergeUnclassifiedCategoryWith' 可用于将混合类别（单元来自不同类别）合并到主要类别之一。
 - 如果选择没有有效触发器的类别，则存在允许从所有有效触发器中选取触发器的回退模式，就像禁用类别时一样。
-- 如果 'Autocreate=yes'，AI会关心所有单位的先决条件，所以如果房子的科技树对于触发器来说不完整，它就会被丢弃。它尊重像'Prerequisite.RequiredTheaters'、'Prerequisite.Negative'、'Prerequisite.Lists'和'[GenericPrerequisites]'部分这样的Ares标签。
+- 如果 'Autocreate=yes'，AI会关心所有单位的先决条件，所以如果所属方的科技树对于触发器来说不完整，它就会被丢弃。它尊重像'Prerequisite.RequiredTheaters'、'Prerequisite.Negative'、'Prerequisite.Lists'和'[GenericPrerequisites]'部分这样的Ares标签。
 - 如果找到当前概率权重为 5000 的触发器，则丢弃所有有效触发器，并开始搜索权重为 5000 的所有有效触发器。AI 将随机选择 1 个，并将所选触发器的当前权重减少 1（因此，如果在下一个团队选择循环中没有发生任何事情，它不会出现在此特殊列表中）。在此方案下，类别处于禁用状态。
 - 单位可以使用 'ConsideredVehicle' 和 'ConsideredNaval' 布尔标签覆盖类别。
 - AI 能够在被占领的秘密实验室中使用已解锁的单位。
