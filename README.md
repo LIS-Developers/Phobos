@@ -1,4 +1,4 @@
-## What's this?
+# What's this?
 
 This is a fork of a branche of Phobos,which bases on CrimRecya's and MJobos‘s Phobos branch.
 
@@ -12,9 +12,9 @@ I'll follow up with the Phobos branch of the original CrimRecya and MJobos, and 
 
 我会跟进原绯红热茶和航味麻酱的Phobos分支，此处仅列出比那个分支多出来的功能。
 
-## New：
+# New：
 
-# 1.专用于AI修复桥梁的脚本（Script action for repairing destroyed bridges #791 by FS-21）
+## 1.专用于AI修复桥梁的脚本（Script action for repairing destroyed bridges #791 by FS-21）
 
 Picks a Bridge Repair Hut from the map that is linked with a bridge with destroyed sections and is reachable by engineers and then send the Taskforce against it.The Taskforce must have any engineer and (Bridge Repair Huts in the map) or the script will end.Puts non-engineers into Area Guard mode when they arrive near the Bridge Repair Hut location.Only are evaluated Bridge Repair Huts that can be reached by the Engineers.
 
@@ -41,7 +41,7 @@ x=10105,n ;n为整数型，AI工程师选择桥梁维修小屋的模式
 ;-1 -> 随机选取
 ```
 
-# 2. 新的 AI Teams 选择器（New AI Teams Selector #810 by FS-21）
+## 2. 新的 AI Teams 选择器（New AI Teams Selector #810 by FS-21）
 
 - New AI system for selecting valid triggers in multiplayer randomly. Unlike the original method this one checks prerequisites and take care of other details.
 - It can split the valid triggers into 4 categories: ground, air, naval & mixed categories. If set, AI picks a random trigger in a random category.
