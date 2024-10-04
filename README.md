@@ -1,6 +1,6 @@
 # What's this?
 
-This is a branch of branche of Phobos,which bases on CrimRecya's and MJobos‘s Phobos branch.
+This is a fork of a branche of Phobos,which bases on CrimRecya's and MJobos‘s Phobos branch.
 
 这是Phobos平台的一个分支的分支，基于绯红热茶和航味麻酱的Phobos分支。
 
