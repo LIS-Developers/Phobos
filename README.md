@@ -41,7 +41,7 @@ x=10105,n ;n为整数型，AI工程师选择桥梁维修小屋的模式
 ;-1 -> 随机选取
 ```
 
-# 2.New AI Teams Selector #810 by FS-21 新的 AI Teams 选择器
+# 2. 新的 AI Teams 选择器（New AI Teams Selector #810 by FS-21）
 
 - New AI system for selecting valid triggers in multiplayer randomly. Unlike the original method this one checks prerequisites and take care of other details.
 - It can split the valid triggers into 4 categories: ground, air, naval & mixed categories. If set, AI picks a random trigger in a random category.
