@@ -1,8 +1,8 @@
 # What's this?
 
-This is a branch of Phobos.It bases on CrimRecya's and MJobos‘s Phobos branch.
+This is a branch of branche of Phobos,which bases on CrimRecya's and MJobos‘s Phobos branch.
 
-这是Phobos平台的一个分支，基于绯红热茶和航味麻酱的Phobos分支。
+这是Phobos平台的一个分支的分支，基于绯红热茶和航味麻酱的Phobos分支。
 
 The reason for the existence of this branch is that CrimRecya and MJobos are reluctant to merge some Pull requests, so I forked it out for me to merge Pull requests.
 
